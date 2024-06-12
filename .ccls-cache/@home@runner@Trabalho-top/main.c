@@ -1,14 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define JOGADOR_1 'X'
+#define JOGADOR_2 'O'
+#define CARACTERE_VAZIO '_'
+#define EMPATE 'E'
+#define QTD_LINHAS 3
+#define QTD_COLUNAS 3
+
+int linha;
+int coluna;
+int posicao;
+int cont_jogadas = 0;
+int tam_tabuleiro = QTD_LINHAS * QTD_COLUNAS;
+char jogador_atual = JOGADOR_1;
+char ganhador = EMPATE
+
 int main() {
 
   int opcao = 0;
 do {
   int deu_certo = system("clear");
-  printf("               J O G O  F O D I C O . C    \n"); //mudar nome do jogo
+  printf("               H A S H T A G    \n");
+  printf("                  \033[1;31mX vs O\033[0m    \n");
   printf("\n");
-  printf("1 - Iniciar\n"); // checar se pode botar esc
+  printf("1 - Iniciar\n"); 
   printf("2 - Instruções\n");
   printf("3 - Sair\n");
   printf("\n");
@@ -31,13 +47,9 @@ do {
     deu_certo = system("clear");
     printf("Instruções\n"); // mudar instruções
     printf("\n");
-    printf("1. Ganhe\n");
-    printf("2. Não perca\n");
-    printf("3. Ame o Zé Regis\n");
-    printf("4. MAME o Zé Regis\n");
-    printf("5. Seja o vencedor\n");
-    printf("\n");
-    printf("Pressione enter para voltar ao menu\n");
+    printf("Escreva números de 1 a 9 para jogar\n");
+    printf("Não esqueça de digitar o número da posição\n");
+    printf("Pressione ENTER para voltar ao menu");
     getchar();
     break;
       
