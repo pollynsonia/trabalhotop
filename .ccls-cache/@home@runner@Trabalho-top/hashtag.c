@@ -80,17 +80,17 @@ void atualizar_estatisticas(struct Jogador *vencedor, struct Jogador *perdedor) 
 
 void exibir_estatisticas(struct Jogador jogador) {
     printf("Jogador: %s\n", jogador.nome);
-    printf("Vitórias: %d\n", jogador.vitorias);
-    printf("Derrotas: %d\n", jogador.derrotas);
-    printf("Empates: %d\n", jogador.empates);
+    printf("\033[1;32mVitórias: %d\033[0m\n", jogador.vitorias);
+    printf("\033[1;31mDerrotas: %d\033[0m\n", jogador.derrotas);
+    printf("\033[1;33mEmpates: %d\033[0m\n", jogador.empates);
 }
 
 int main(int argc, char const *argv[]) {
     int opcao = 0;
     do {
         system("clear"); // Limpa o terminal
-        printf("               H A S H T A G    \n");
-        printf("                  \033[1;31mX vs O\033[0m    \n");
+        printf("                             H A S H T A G    \n");
+        printf("                                \033[1;31mX vs O\033[0m    \n");
         printf("\n");
         printf("1 - Iniciar\n"); 
         printf("2 - Resultados\n");
@@ -190,7 +190,8 @@ int main(int argc, char const *argv[]) {
             }
             case 2:
                 system("clear");
-                printf("Resultados\n");
+                printf("                         R E S U L T A D O S\n");
+                printf("\n");
                 exibir_estatisticas(jogador1);
                 printf("\n");
                 exibir_estatisticas(jogador2);
@@ -199,10 +200,11 @@ int main(int argc, char const *argv[]) {
                 break;
             case 3:
                 system("clear");
-                printf("Instruções\n");
-                printf("Escreva números de 1 a 9 para jogar\n");
-                printf("Não esqueça de digitar o número da posição\n");
+                printf("                        I N S T R U Ç Õ E S\n");
+                printf("\n");
+                printf("Digite um número de 1 a 9 para escolher a posição do X ou O \n");
                 printf("Digite 0 caso queira sair no meio da partida\n");
+                printf("\n");
                 printf("Pressione ENTER para voltar");
                 getchar();
                 break;
